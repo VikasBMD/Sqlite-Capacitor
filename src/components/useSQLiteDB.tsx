@@ -62,9 +62,14 @@ const useSQLiteDB = () => {
   const initializeTables = async () => {
     performSQLAction(async (db: SQLiteDBConnection | undefined) => {
       const queryCreateTable = `
-      CREATE TABLE IF NOT EXISTS test (
+      CREATE TABLE IF NOT EXISTS test2 (
       id INTEGER PRIMARY KEY NOT NULL,
-      name TEXT NOT NULL
+      name TEXT NOT NULL,
+      uid TEXT,
+      body TEXT,
+      listId TEXT,
+      datetime TEXT,
+      title TEXT
       );
     `;
       const respCT = await db?.execute(queryCreateTable);
